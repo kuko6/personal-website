@@ -1,4 +1,8 @@
 
+<svelte:head>
+  <title>Kuko</title>
+</svelte:head>
+
 <div class="container mx-auto max-w-3xl pt-16 space-y-8">
   <div class="space-y-4">
     <h1 class="font-inter font-black text-5xl">
