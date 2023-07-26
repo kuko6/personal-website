@@ -9,13 +9,13 @@
 </script>
 
 <header>
-  <nav class="mx-40 pr-2.5 pt-16">
-    <div class="flex flex-row justify-end content-center gap-5 font-inter text-lg font-extrabold">
+  <nav class="mx-40 pr-2.5 pt-14">
+    <div class="flex flex-row justify-end content-center gap-5 font-inter font-extrabold">
       <NavLink label={"Home"} path={"/"} />
       <NavLink label={"Projects"} path={"/projects"} />
       <!-- <NavLink label={"Blog"} path={"/blog"} /> -->
       <NavIcon icon={githubLogo} alt={"github logo"} path={"https://github.com/kuko6"} />
-      <div class="border-l border-black my-1.5"/>
+      <div class="border-l border-black my-2"/>
       <NavIcon icon={darkmode} alt={"change theme button"} />
     </div>
   </nav>
