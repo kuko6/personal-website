@@ -10,11 +10,9 @@
 			if (sessionStorage.theme === 'dark' || (!('theme' in sessionStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 				document.documentElement.classList.add('dark')
 				document.documentElement.classList.remove('light');
-				sessionStorage.theme = 'dark';
 			} else {
 				document.documentElement.classList.remove('dark')
 				document.documentElement.classList.add('light');
-				sessionStorage.theme = 'light';
 			}
 		</script>
 	</head>
