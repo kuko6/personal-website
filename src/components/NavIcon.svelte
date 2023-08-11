@@ -1,9 +1,8 @@
 <script>
-  export let icon;
   export let path;
   export let alt;
 </script>
 
-<a class="flex flex-col justify-center p-1 hover:bg-slate-100 dark:hover:bg-slate-600 rounded-md" href={path}>
-  <img alt={alt} src={icon} width="18" height="18">
+<a alt={alt} class="flex flex-col justify-center p-2 hover:bg-slate-200 dark:hover:bg-slate-600 dark:text-white rounded-md" href={path}>
+  <slot />
 </a>

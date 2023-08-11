@@ -6,4 +6,7 @@ import { writable } from 'svelte/store'
 
 // // Initial theme config from current state
 // const theme = writable(prefersDarkMode.matches ? 'dark' : 'light')
-// export { theme }
+
+const theme = writable('light')
+
+export { theme }

@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 
+body {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    @apply bg-stone-100 dark:bg-stone-800;
+}
+
 /* @layer base {
     html {
         background-color: #FAF8F8;
