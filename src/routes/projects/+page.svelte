@@ -2,4 +2,4 @@
   <title>Projects - Kuko</title>
 </svelte:head>
 
-<h1>Projects</h1>
+<h1 class="dark:text-white">Projects</h1>
