@@ -6,7 +6,7 @@
   }
 </script>
 
-<button class="button p-2 hover:bg-amber-200 hover:text-black rounded-md" 
+<button class="button p-2 hover:bg-orange-200 hover:text-black rounded-md" 
   on:click={toggleDarkMode} 
   alt={"switch to light mode"}
 >

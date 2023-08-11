@@ -5,6 +5,13 @@
 @tailwind utilities;
 
 
+:global(body) {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+
 body {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     @apply bg-stone-100 dark:bg-stone-800;
