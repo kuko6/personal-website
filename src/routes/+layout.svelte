@@ -13,7 +13,7 @@
 </script>
 
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl">
   <header>
     <Navigation />
   </header>
