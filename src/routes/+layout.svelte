@@ -3,15 +3,28 @@
   import Navigation from "../components/Navigation.svelte";
   import { Confetti } from "svelte-confetti";
 
-  let easterEgg = false;
-  function foundEasterEgg() {
-    easterEgg = !easterEgg;
-  }
-
+  let confetti = false;
   let currentDate = new Date();
   let targetDate = new Date(currentDate.getFullYear(), 9, 27);
-</script>
+  function party() {
+    confetti = !confetti;
+  }
 
+  let isVisible = true;
+  let isHovering = false;
+  let a = 0;
+  function handleMouseEnter() {
+    isHovering = true;
+    a = setTimeout(() => {
+      if (isHovering) isVisible = false;
+    }, 2000); // 2000 milliseconds = 2 seconds
+  }
+
+  function handleMouseLeave() {
+    isHovering = false;
+    if (!confetti) isVisible = true;
+  }
+</script>
 
 <div class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl">
   <header>
@@ -19,7 +32,7 @@
   </header>
   
   <main class="flex-grow">
-    {#if easterEgg}
+    {#if confetti}
       <div class="confetti">
         <Confetti x={[-5, 5]} y={[0, 0.1]} delay={[0, 10000]} duration=5000 amount=300 iterationCount=infinite fallDistance="100vh" /> 
       </div>
@@ -34,9 +47,15 @@
   <footer class="py-10">
     <div class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500">
       <a class="hover:underline underline-offset-2 decoration-blue-400" 
-        href="https://github.com/kuko6/kuko">made by Kuko
-      </a> 
-      <span class="group" role="button" on:click={foundEasterEgg}>, 2023</span>
+        href="https://github.com/kuko6/kuko">made by Kuko,
+      </a>
+     <div role="group" class="group pl-1"  on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+      {#if isVisible}
+        <span>2023</span>
+      {:else }
+        <button class="{confetti ? 'animate-wiggle' : ''}" on:click={party}>🎉</button>
+      {/if }
+      </div>    
     </div>
   </footer>
 </div>
