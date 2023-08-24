@@ -6,7 +6,7 @@
   import NavIcon from "../components/NavIcon.svelte";
 </script>
 
-<nav class="mx-40 pr-2.5 pt-12 dark:text-white">
+<nav class="pt-5 md:pt-10 dark:text-white">
   <div class="flex flex-row justify-end content-center text-base gap-2 font-inter font-bold">
     <NavLink label={"Home"} path={"/"} />
     <NavLink label={"Projects"} path={"/projects"} />
