@@ -31,7 +31,7 @@
     <Navigation />
   </header>
   
-  <main class="flex-grow">
+  <main class="flex-grow pt-8 md:pt-16">
     {#if confetti}
       <div class="confetti">
         <Confetti x={[-5, 5]} y={[0, 0.1]} delay={[0, 10000]} duration=5000 amount=300 iterationCount=infinite fallDistance="100vh" /> 
