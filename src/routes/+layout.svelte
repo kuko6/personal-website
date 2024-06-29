@@ -46,21 +46,21 @@
  
   <footer class="py-10">
     <div class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500">
-      <a class="hover:underline underline-offset-2 decoration-blue-400" 
-        href="https://github.com/kuko6/kuko">made by Kuko,
+      <a class="hover:underline underline-offset-2 decoration-blue-400" href="https://github.com/kuko6/kuko">
+        made by Kuko,
       </a>
-     <div role="group" class="group pl-1"  on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-      {#if isVisible}
-        <span>2023</span>
-      {:else }
-        <button class="{confetti ? 'animate-wiggle' : ''}" on:click={party}>🎉</button>
-      {/if }
+      <div role="group" class="group pl-1"  on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+        {#if isVisible}
+          <span>2024</span>
+        {:else }
+          <button class="{confetti ? 'animate-wiggle' : ''}" on:click={party}>🎉</button>
+        {/if }
       </div>    
     </div>
   </footer>
 </div>
 
-<style lang="postcss">
+<style>
   .confetti {
     position: fixed;
     top: -50px;

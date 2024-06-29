@@ -6,6 +6,7 @@
 <a class="p-2 hover:bg-slate-200 dark:hover:bg-slate-600 dark:text-white rounded-md"
   alt={alt} 
   href={path}
+  target="_blank"
 >
   <slot />
 </a>
