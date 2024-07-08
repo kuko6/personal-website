@@ -8,7 +8,7 @@
       Hi, I'm Jakub 👋
     </h1>
     <p class="font-inter leading-7">
-      A computer science student from Bratislava, Slovakia. 
+      a machine learning engineer from Bratislava, Slovakia. 
     </p>
   </div>
   <div class="space-y-3 dark:text-white">
@@ -17,7 +17,7 @@
     </h2>
     <div class="space-y-3">
       <p class="font-inter leading-8">
-        Throughout my studies, I have developed a deep passion for machine learning and computer vision.
+        Throughout my studies, I have developed a passion for machine learning and computer vision.
       </p>
       <p class="font-inter leading-8">
         While I'm still relatively new to the world of programming, I always try to expand my knowledge and 

@@ -6,6 +6,7 @@
   let confetti = false;
   let currentDate = new Date();
   let targetDate = new Date(currentDate.getFullYear(), 9, 27);
+  
   function party() {
     confetti = !confetti;
   }
@@ -13,6 +14,7 @@
   let isVisible = true;
   let isHovering = false;
   let a = 0;
+  
   function handleMouseEnter() {
     isHovering = true;
     a = setTimeout(() => {

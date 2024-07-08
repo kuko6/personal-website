@@ -7,13 +7,19 @@
   const project = [
     {
       "name": "Style transfer",
-      "description": "Lalallala aldlasdhajsgda djsadgahdfa sdfag dsfd safdgsa fd gadgass fdga fdasgd safgds fagdas dghsaf dga dagf d",
+      "description": "Pytorch implementation of style transfer based on the Adaptive Instance Normalization.",
       "ref": "https://github.com/kuko6/style-transfer"
     },
     {
       "name": "Click correction",
-      "description": "Lalallala aldlasdhajsgda djsadgahdfa sdfag dsfd safdgsa fd gadgass fdga fdasgd safgds fagdas dghsaf dga dagf d",
+      "description": `Method for Segmentation of Vestibular Schwannomas from Brain MRI Scans. The method 
+      utilises an auxilarly correction network, which based on user-defined clicks refines the initial segmentation.`,
       "ref": "https://github.com/kuko6/click-correction"
+    },
+    {
+      "name": "Various computer vision assignments",
+      "description": "Computer Vision assignments from university course (in slovak).",
+      "ref": "https://github.com/kuko6/cv-assignments"
     }
   ]
 </script>
