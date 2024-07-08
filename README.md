@@ -1,2 +1,2 @@
 # Personal website
-Built with [SvelteKit](https://kit.svelte.dev) ✌️.
+Built with [SvelteKit](https://kit.svelte.dev) ✌️
