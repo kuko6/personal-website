@@ -13,13 +13,12 @@
 
   let isVisible = true;
   let isHovering = false;
-  let a = 0;
   
   function handleMouseEnter() {
     isHovering = true;
     a = setTimeout(() => {
       if (isHovering) isVisible = false;
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 1250);   
   }
 
   function handleMouseLeave() {
@@ -47,11 +46,13 @@
   </main>
  
   <footer class="py-10">
-    <div class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500">
+    <div class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500" 
+      role="group" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}
+    >
       <a class="hover:underline underline-offset-2 decoration-blue-400" href="https://github.com/kuko6/kuko">
         made by Kuko,
       </a>
-      <div role="group" class="group pl-1"  on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+      <div class="pl-1">
         {#if isVisible}
           <span>2024</span>
         {:else }
