@@ -40,7 +40,7 @@
     <h2 class="font-inter font-extrabold text-xl md:text-2xl">About me</h2>
     <div class="space-y-3">
       <p class="font-inter leading-8">
-        Throughout my studies, I’ve developed a passion for machine learning and
+        Throughout my studies I’ve developed a passion for machine learning and
         computer vision, but I also enjoy working in other areas, such as
         backend or frontend development.
       </p>
@@ -50,8 +50,8 @@
         expand my knowledge and skills.
       </p>
       <p class="font-inter leading-8">
-        Outside of coding, I enjoy learning new languages (currently studying
-        French 🇫🇷), visiting art galleries, and staying active through playing
+        Outside of coding I enjoy learning new languages (currently studying
+        French 🇫🇷), visiting art galleries and staying active through playing
         tennis or skiing.
       </p>
     </div>
