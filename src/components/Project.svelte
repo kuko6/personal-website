@@ -11,7 +11,7 @@
     </p>
     <div class="my-3 border-t-2 border-gray-300"></div>
     <!-- <div class="flex gap-2 justify-center items-center"> -->
-    <div class="flex gap-2">
+    <div class="flex gap-2 flex-wrap">
       {#each project.used_tech as tech}
         <Tech name={tech} />
       {/each}
