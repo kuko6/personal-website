@@ -50,8 +50,7 @@
         expand my knowledge and skills.
       </p>
       <p class="font-inter leading-8">
-        Outside of coding I enjoy learning new languages (currently studying
-        French 🇫🇷), visiting art galleries and staying active through playing
+        Outside of coding I enjoy learning new languages, visiting art galleries and staying active through playing
         tennis or skiing.
       </p>
     </div>

@@ -3,6 +3,12 @@
 
   const project = [
     {
+      name: "Nix Experiments",
+      description: "Collection of dev environments and system configurations written in Nix.",
+      ref: "https://github.com/kuko6/nix-config",
+      used_tech: ["Nix", "Unix"]
+    },
+    {
       name: "Click correction",
       description: `Method for Segmentation of Vestibular Schwannomas from Brain MRI Scans. The method is based on an auxilarly correction network, which utilises user-defined clicks to refines inaccurate segmentation.`,
       ref: "https://github.com/kuko6/click-correction",
