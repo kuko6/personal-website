@@ -3,7 +3,7 @@
 
   const project = [
     {
-      name: "Nix Experiments",
+      name: "Nix experiments",
       description: "Collection of dev environments and system configurations written in Nix.",
       ref: "https://github.com/kuko6/nix-config",
       used_tech: ["Nix", "Unix"]
