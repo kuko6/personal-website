@@ -4,7 +4,7 @@
 </script>
 
 <a
-  class="flex flex-col justify-center px-2 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-md"
+  class="flex flex-col justify-center px-2 hover:bg-indigo-100 dark:hover:bg-indigo-500 rounded-md"
   href={path}
 >
   {label}

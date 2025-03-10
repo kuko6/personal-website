@@ -18,7 +18,7 @@
     isHovering = true;
     let a = setTimeout(() => {
       if (isHovering) isVisible = false;
-    }, 1250);
+    }, 2500);
   }
 
   function handleMouseLeave() {
@@ -69,14 +69,14 @@
       on:mouseleave={handleMouseLeave}
     >
       <a
-        class="hover:underline underline-offset-2 decoration-blue-400"
-        href="https://github.com/kuko6/kuko"
+        class="hover:underline decoration-2 decoration-indigo-400"
+        href="https://github.com/kuko6/personal-website"
       >
         made by Kuko,
       </a>
       <div class="pl-1">
         {#if isVisible}
-          <span>2024</span>
+          <span>2025</span>
         {:else}
           <button class={confetti ? "animate-wiggle" : ""} on:click={party}
             >🎉</button

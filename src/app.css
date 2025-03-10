@@ -14,7 +14,7 @@ body {
   transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  @apply bg-stone-50 dark:bg-stone-800;
+  @apply bg-slate-50 dark:bg-stone-800;
 }
 
 /* @layer base {
