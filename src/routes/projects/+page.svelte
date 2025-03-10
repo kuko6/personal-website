@@ -3,6 +3,13 @@
 
   const project = [
     {
+      name: "Simple pixelart filter",
+      description:
+        "A app that allows you to pixelate images, quantize colors and display color palettes.",
+      ref: "https://github.com/kuko6/pixel-filter",
+      used_tech: ["Python", "OpenCV", "Gradio"],
+    },
+    {
       name: "Nix experiments",
       description:
         "Collection of dev environments and system configurations written in Nix.",
