@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>Kuko</title>
+  <title>Home - Jakub Povinec</title>
 </svelte:head>
 
 <div

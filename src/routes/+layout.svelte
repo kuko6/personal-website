@@ -72,7 +72,7 @@
         class="hover:underline decoration-2 decoration-indigo-400"
         href="https://github.com/kuko6/personal-website"
       >
-        made by Kuko,
+        made by kuko6,
       </a>
       <div class="pl-1">
         {#if isVisible}

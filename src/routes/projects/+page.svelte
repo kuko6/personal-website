@@ -69,7 +69,7 @@
 </script>
 
 <svelte:head>
-  <title>Projects - Kuko</title>
+  <title>Projects - Jakub Povinec</title>
 </svelte:head>
 <div class="space-y-6 dark:text-white">
   <h1 class="font-inter font-black text-2xl md:text-4xl">Projects</h1>
