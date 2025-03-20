@@ -32,7 +32,7 @@
     <Navigation />
   </header>
 
-  <main class="flex-grow pt-6 md:pt-14">
+  <main class="flex-grow pt-6 md:pt-10">
     {#if confetti}
       <div class="confetti">
         <Confetti
@@ -72,7 +72,7 @@
         class="hover:underline decoration-2 decoration-indigo-400"
         href="https://github.com/kuko6/personal-website"
       >
-        made by kuko6,
+        made by Jakub Povinec,
       </a>
       <div class="pl-1">
         {#if isVisible}

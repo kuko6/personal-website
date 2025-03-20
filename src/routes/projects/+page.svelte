@@ -3,35 +3,42 @@
 
   const project = [
     {
-      name: "Simple pixelart filter",
+      name: "Simple Pixelart Filter",
       description:
-        "A app that allows you to pixelate images, quantize colors and display color palettes.",
+        "An app that allows you to pixelate images, quantize colors and display color palettes.",
       ref: "https://github.com/kuko6/pixel-filter",
       used_tech: ["Python", "OpenCV", "Gradio"],
     },
     {
-      name: "Nix experiments",
+      name: "Nix Experiments",
       description:
         "Collection of dev environments and system configurations written in Nix.",
       ref: "https://github.com/kuko6/nix-config",
       used_tech: ["Nix", "Unix"],
     },
     {
-      name: "Click correction",
+      name: "Advent of Code 2024",
+      description:
+        "Solutions for Advent of Code in TypeScript.",
+      ref: "https://github.com/kuko6/aoc24",
+      used_tech: ["Deno", "TypeScript"],
+    },
+    {
+      name: "Click Correction",
       description:
         "Method for Segmentation of Vestibular Schwannomas from Brain MRI Scans. The method is based on an auxilarly correction network, which utilises user-defined clicks to refines inaccurate segmentation.",
       ref: "https://github.com/kuko6/click-correction",
       used_tech: ["Pytorch", "OpenCV", "AzureML", "Docker"],
     },
     {
-      name: "Style transfer",
+      name: "Style Transfer",
       description:
-        "Pytorch implementation of style transfer based on the Adaptive Instance Normalization.",
+        "Implementation of style transfer using Adaptive Instance Normalization (AdaIN) with a VGG-19-based architecture, trained on WikiArt and COCO datasets.",
       ref: "https://github.com/kuko6/style-transfer",
       used_tech: ["Pytorch", "Gradio"],
     },
     {
-      name: "Various computer vision assignments",
+      name: "Various Computer Vision Assignments",
       description:
         "Collection of various computer vision assignments (contour analysis, image correction, segmentation and classification).",
       ref: "https://github.com/kuko6/cv-assignments",
@@ -52,7 +59,7 @@
       ],
     },
     {
-      name: "Application for management of scientific research projects",
+      name: "Application for Management of Scientific Research Projects",
       description:
         "Team project for the Slovak Center of Scientific and Technical Information. The application aimed to improve registration, monitoring, and overall management of research projects. Our team contributed to both the frontend and backend development of the application.",
       ref: "javascript:void(0)",
@@ -71,8 +78,8 @@
 <svelte:head>
   <title>Projects - Jakub Povinec</title>
 </svelte:head>
-<div class="space-y-6 dark:text-white">
-  <h1 class="font-inter font-black text-2xl md:text-4xl">Projects</h1>
+<div class="space-y-5 dark:text-white">
+  <h1 class="">Projects</h1>
   <div class="flex flex-col gap-3">
     {#each project as p}
       <Project project={p} />
