@@ -59,13 +59,13 @@
     <h2 class="dark:text-white">Featured Projects</h2>
       <ul class="list-disc mx-6 dark:text-white">
         <li class="pb-1">
-          <a class="text-indigo-600 hover:underline" href="https://www.github.com/kuko6/click-correction">
+          <a class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-2 underline-offset-2" href="https://www.github.com/kuko6/click-correction">
             Click Correction
           </a>
            - A two-stage segmentation method where an initial network is refined using user clicks via an auxiliary correction network.
         </li>
         <li>
-          <a class="text-indigo-600 hover:underline" href="https://www.github.com/kuko6/click-correction">
+          <a class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-2 underline-offset-2" href="https://www.github.com/kuko6/style-transfer">
             Style Transfer
           </a>
            - Pytorch implementation of style transfer based on Adaptive Instance Normalization.

@@ -69,7 +69,7 @@
       on:mouseleave={handleMouseLeave}
     >
       <a
-        class="hover:underline decoration-2 decoration-indigo-400"
+        class="hover:underline decoration-2 decoration-indigo-400 underline-offset-2"
         href="https://github.com/kuko6/personal-website"
       >
         made by Jakub Povinec,
