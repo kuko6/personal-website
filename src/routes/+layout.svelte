@@ -39,10 +39,10 @@
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
-          duration="5000"
-          amount="300"
+          duration="6800"
+          amount="310"
           iterationCount="infinite"
-          fallDistance="100vh"
+          fallDistance="130vh"
         />
       </div>
     {:else if currentDate.toDateString() === targetDate.toDateString()}
@@ -51,10 +51,10 @@
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
-          duration="5000"
-          amount="300"
+          duration="6800"
+          amount="310"
           iterationCount="2"
-          fallDistance="100vh"
+          fallDistance="130vh"
         />
       </div>
     {/if}
@@ -68,12 +68,20 @@
       on:mouseenter={handleMouseEnter}
       on:mouseleave={handleMouseLeave}
     >
-      <a
+      <!-- <a
         class="hover:underline decoration-2 decoration-indigo-400 underline-offset-2"
         href="https://github.com/kuko6/personal-website"
       >
         made by Jakub Povinec,
+      </a> -->
+
+      <a
+        class="hover-rotated-underline"
+        href="https://github.com/kuko6/personal-website"
+      >
+        made by Jakub Povinec,
       </a>
+
       <div class="pl-1">
         {#if isVisible}
           <span>2025</span>
@@ -88,6 +96,20 @@
 </div>
 
 <style>
+  .hover-rotated-underline {
+    @apply relative;
+  }
+  .hover-rotated-underline::after {
+    @apply absolute left-0 bottom-[1px] w-full h-[2px] bg-current 
+           opacity-0 ;
+    content: '';
+    transform: rotate(0.5deg);
+    transform-origin: left bottom;
+  }
+  .hover-rotated-underline:hover::after {
+    @apply opacity-100 text-indigo-400;
+  }
+
   .confetti {
     position: fixed;
     top: -50px;
