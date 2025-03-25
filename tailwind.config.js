@@ -18,6 +18,10 @@ export default {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         jetbrains: ["JetBrains Mono", "monospace"],
+        mono: ["IBM Plex Mono", "monospace"],
+      },
+      colors: {
+        'beige': "#fff9f0",
       },
     },
   },
