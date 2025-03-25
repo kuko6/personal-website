@@ -26,14 +26,14 @@
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
 >
-  <div class="space-y-3 dark:text-white">
+  <div class="space-y-2 dark:text-white">
     <h1>
       Hi, I'm Jakub 👋
       <!-- Hi, I'm Jakub <span -->
         <!-- class={`${isHovering ? "animate-wiggle" : ""} inline-block`}>👋</span -->
       <!-- > -->
     </h1>
-    <p class="font-inter leading-7">
+    <p class="font-inter leading-6">
       a software engineer from Bratislava, Slovakia.
     </p>
   </div>
@@ -59,17 +59,31 @@
     <h2 class="dark:text-white">Featured Projects</h2>
       <ul class="list-disc mx-6 dark:text-white">
         <li class="pb-1">
-          <a class="text-indigo-500 dark:text-indigo-400 hover:underline decoration-2 underline-offset-2" href="https://www.github.com/kuko6/click-correction">
-            Click Correction
+          <a class="project" href="https://www.github.com/kuko6/click-correction">
+            [Click Correction]
           </a>
            - A two-stage segmentation method where an initial network is refined using user clicks via an auxiliary correction network.
         </li>
         <li>
-          <a class="text-indigo-500 dark:text-indigo-400 hover:underline decoration-2 underline-offset-2" href="https://www.github.com/kuko6/style-transfer">
-            Style Transfer
+          <a class="project" href="https://www.github.com/kuko6/style-transfer">
+            [Style Transfer]
           </a>
            - Pytorch implementation of style transfer based on Adaptive Instance Normalization.
         </li>
       </ul>
   </div>
 </div>
+
+<style>
+  .project {
+    @apply text-indigo-500;
+  }
+
+  .project::-prefers-color-scheme-dark {
+    @apply text-indigo-400;
+  }
+
+  .project:hover {
+    @apply bg-indigo-500 text-white py-0.5;
+  }
+</style>

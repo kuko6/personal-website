@@ -81,8 +81,28 @@
 <div class="space-y-5 dark:text-white">
   <h1 class="">Projects</h1>
   <div class="flex flex-col gap-3">
-    {#each project as p}
+    <!-- {#each project as p}
       <Project project={p} />
-    {/each}
+    {/each} -->
+    <ul class="list-disc mx-6 space-y-2 dark:text-white">
+      {#each project as p}
+        <li class="">
+          <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
+            [{p.name}]
+          </a>
+          - {p.description}
+        </li>
+      {/each}
+    </ul>
   </div>
 </div>
+
+<style>
+  .project {
+    
+  }
+
+  .project:hover {
+    @apply bg-indigo-500 text-white py-0.5;
+  }
+</style>
