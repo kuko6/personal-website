@@ -90,7 +90,7 @@
           <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
             [{p.name}]
           </a>
-          - {p.description}
+         <span>- {p.description}</span>
         </li>
       {/each}
     </ul>

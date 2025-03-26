@@ -17,11 +17,19 @@
     transition:
       background-color 0.2s ease-in-out,
       color 0.2s ease-in-out;
-    @apply bg-white dark:bg-stone-800 text-black dark:text-white;
+    @apply bg-soft-beige dark:bg-stone-800 text-gray-800 dark:text-white;
   }
 
   p {
     @apply font-inter;
+  }
+
+  a {
+    @apply font-inter;
+  }
+
+  span {
+    @apply font-inter leading-7;
   }
 
   h1 {
