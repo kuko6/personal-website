@@ -24,9 +24,9 @@
     @apply font-inter;
   }
 
-  a {
+  /* a {
     @apply font-inter;
-  }
+  } */
 
   span {
     @apply font-inter leading-7;
