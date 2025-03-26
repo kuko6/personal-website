@@ -78,11 +78,43 @@
 <svelte:head>
   <title>Projects - Jakub Povinec</title>
 </svelte:head>
-<div class="space-y-5 dark:text-white">
-  <h1 class="">Projects</h1>
+<div class="space-y-5">
+  <h1 class=""><span class="rotated-underline">Projects</span></h1>
   <div class="flex flex-col gap-3">
-    {#each project as p}
+    <!-- {#each project as p}
       <Project project={p} />
-    {/each}
+    {/each} -->
+    <ul class="list-disc mx-6 space-y-2">
+      {#each project as p}
+        <li class="">
+          <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
+            [{p.name}]
+          </a>
+         <span>- {p.description}</span>
+        </li>
+      {/each}
+    </ul>
   </div>
 </div>
+
+<style>
+  .project {
+    
+  }
+
+  .project:hover {
+    @apply bg-indigo-500 text-white py-0.5;
+  }
+
+  /* .rotated-underline {
+    @apply relative;
+  }
+  
+  .rotated-underline::after {
+    @apply absolute left-0 bottom-[-2px] w-full h-[6px] bg-current text-indigo-400;
+    content: '';
+    transform: rotate(-2.5deg);
+    transform-origin: right bottom;
+  } */
+
+</style>

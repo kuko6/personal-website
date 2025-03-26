@@ -61,7 +61,7 @@
     <slot />
   </main>
 
-  <footer class="py-10">
+  <footer class="pb-10 pt-14">
     <div
       class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
       role="group"

@@ -4,6 +4,10 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        'beige': "#fff9f0",
+        'soft-beige': '#FFFEFB', // #FFFBF5 FFFCF7 FFFEFB
+      },
       keyframes: {
         wiggle: {
           "0%, 100%": { transform: "rotate(-6deg)" },
@@ -18,6 +22,7 @@ export default {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         jetbrains: ["JetBrains Mono", "monospace"],
+        mono: ["IBM Plex Mono", "monospace"],
       },
     },
   },
