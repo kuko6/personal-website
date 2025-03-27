@@ -45,9 +45,9 @@
       </p>
       <p class="leading-7">
         You can also find me on: 
-        <a href="https://mas.to/@kuko6" class="link">[Mastodon]</a>
-        <a href="https://bsky.app/profile/kuko6.bsky.social" class="link">[Bluesky]</a>
-        <a href="https://www.linkedin.com/in/jakub-povinec/" class="link">[LinkedIn]</a>
+        <a href="https://mas.to/@kuko6" class="link text-indigo-500 dark:text-indigo-400">[Mastodon]</a>
+        <a href="https://bsky.app/profile/kuko6.bsky.social" class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a>
+        <a href="https://www.linkedin.com/in/jakub-povinec/" class="link text-indigo-500 dark:text-indigo-400">[LinkedIn]</a>
       </p>
     </div>
   </div>
@@ -55,14 +55,14 @@
     <h2 class="">Featured Projects</h2>
     <ul class="list-disc mx-6">
       <li class="pb-1">
-        <a class="link" href="https://www.github.com/kuko6/click-correction">
+        <a class="link text-indigo-500 dark:text-indigo-400" href="https://www.github.com/kuko6/click-correction">
           [Click Correction]
         </a>
         <span>- A two-stage segmentation method where an initial network is refined
           using user clicks via an auxiliary correction network.</span>
       </li>
       <li>
-        <a class="link" href="https://www.github.com/kuko6/style-transfer">
+        <a class="link text-indigo-500 dark:text-indigo-400" href="https://www.github.com/kuko6/style-transfer">
           [Style Transfer]
         </a>
         <span>- Pytorch implementation of style transfer based on Adaptive Instance
@@ -74,12 +74,12 @@
 
 <style>
   .link {
-    @apply text-indigo-500;
+    /* @apply text-indigo-500; */
   }
 
-  .link::-prefers-color-scheme-dark {
+  /* .link::-prefers-color-scheme-dark {
     @apply text-indigo-400;
-  }
+  } */
 
   .link:hover {
     @apply bg-indigo-500 text-white py-0.5;
