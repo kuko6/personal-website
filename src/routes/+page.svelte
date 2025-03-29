@@ -1,37 +1,15 @@
 <script>
   import "../app.css";
-
-  let isHovering = false;
-
-  function handleMouseEnter() {
-    isHovering = true;
-  }
-
-  function handleMouseLeave() {
-    isHovering = false;
-  }
-
-  function check() {
-    console.log(isHovering);
-  }
 </script>
 
 <svelte:head>
   <title>Home - Jakub Povinec</title>
 </svelte:head>
 
-<div
-  class="space-y-6"
-  role="group"
-  on:mouseenter={handleMouseEnter}
-  on:mouseleave={handleMouseLeave}
->
+<div class="space-y-6">
   <div class="space-y-3">
     <h1>
       Hi, I'm <span class="rotated-underline">Jakub</span> 👋
-      <!-- Hi, I'm Jakub <span -->
-      <!-- class={`${isHovering ? "animate-wiggle" : ""} inline-block`}>👋</span -->
-      <!-- > -->
     </h1>
     <p class="leading-7">a software engineer from Bratislava, Slovakia.</p>
   </div>
@@ -39,12 +17,12 @@
     <h2>About me</h2>
     <div class="space-y-3">
       <p class="leading-7">
-        I’m passionate about AI and Computer Vision, but also enjoy full-stack development. 
-        I primarily use Python and JavaScript, and love experimenting with new languages and technologies. 
+        I’m passionate about AI and Computer Vision, but also enjoy full-stack development.
+        I primarily use Python and JavaScript, and love experimenting with new languages and technologies.
         Beyond coding, I enjoy art galleries, tennis, and skiing.
       </p>
       <p class="leading-7">
-        You can also find me on: 
+        You can also find me on:
         <a href="https://mas.to/@kuko6" class="link text-indigo-500 dark:text-indigo-400">[Mastodon]</a>
         <a href="https://bsky.app/profile/kuko6.bsky.social" class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a>
         <a href="https://www.linkedin.com/in/jakub-povinec/" class="link text-indigo-500 dark:text-indigo-400">[LinkedIn]</a>

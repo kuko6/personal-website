@@ -79,14 +79,14 @@
   <title>Projects - Jakub Povinec</title>
 </svelte:head>
 <div class="space-y-5">
-  <h1 class=""><span class="rotated-underline">Projects</span></h1>
+  <h1>Projects</h1>
   <div class="flex flex-col gap-3">
     <!-- {#each project as p}
       <Project project={p} />
     {/each} -->
     <ul class="list-disc mx-6 space-y-2">
       {#each project as p}
-        <li class="">
+        <li>
           <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
             [{p.name}]
           </a>
@@ -99,7 +99,7 @@
 
 <style>
   .project {
-    
+
   }
 
   .project:hover {
@@ -109,7 +109,7 @@
   /* .rotated-underline {
     @apply relative;
   }
-  
+
   .rotated-underline::after {
     @apply absolute left-0 bottom-[-2px] w-full h-[6px] bg-current text-indigo-400;
     content: '';

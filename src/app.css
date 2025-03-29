@@ -20,6 +20,10 @@
     @apply bg-soft-beige dark:bg-stone-800 text-gray-800 dark:text-white;
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   p {
     @apply font-inter;
   }

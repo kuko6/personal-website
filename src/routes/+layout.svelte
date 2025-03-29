@@ -27,7 +27,7 @@
   }
 </script>
 
-<div class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl">
+<div class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl w-full">
   <header>
     <Navigation />
   </header>
@@ -61,20 +61,13 @@
     <slot />
   </main>
 
-  <footer class="pb-10 pt-14">
+  <footer class="pb-10 pt-14 h-full w-full">
     <div
       class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
       role="group"
       on:mouseenter={handleMouseEnter}
       on:mouseleave={handleMouseLeave}
     >
-      <!-- <a
-        class="hover:underline decoration-2 decoration-indigo-400 underline-offset-2"
-        href="https://github.com/kuko6/personal-website"
-      >
-        made by Jakub Povinec,
-      </a> -->
-
       <a
         class="hover-rotated-underline"
         href="https://github.com/kuko6/personal-website"
@@ -86,9 +79,7 @@
         {#if isVisible}
           <span>2025</span>
         {:else}
-          <button class={confetti ? "animate-wiggle" : ""} on:click={party}
-            >🎉</button
-          >
+          <button class={confetti ? "animate-wiggle" : ""} on:click={party}>🎉</button>
         {/if}
       </div>
     </div>
@@ -100,7 +91,7 @@
     @apply relative;
   }
   .hover-rotated-underline::after {
-    @apply absolute left-0 bottom-[1px] w-full h-[2px] bg-current 
+    @apply absolute left-0 bottom-[1px] w-full h-[2px] bg-current
            opacity-0 ;
     content: '';
     transform: rotate(0.5deg);
