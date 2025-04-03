@@ -13,6 +13,7 @@
     <NavLink label={"Home"} path={"/"} />
     <!-- <NavLink label={"Blog"} path={"/blog"} /> -->
     <NavLink label={"Projects"} path={"/projects"} />
+    <NavLink label={"Garden"} path={"/garden"} />
     <!-- <NavLink label={"Resume"} path={"/cv.pdf"} /> -->
     <NavIcon alt={"github logo"} path={"https://github.com/kuko6"}>
       <GithubLogo />
