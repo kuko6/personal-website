@@ -61,7 +61,7 @@
     <slot />
   </main>
 
-  <footer class="pb-10 pt-14 h-full w-full">
+  <footer class="pb-10 pt-14 h-full w-full font-sans leading-7">
     <div
       class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
       role="group"
@@ -77,7 +77,7 @@
 
       <div class="pl-1">
         {#if isVisible}
-          <span>2025</span>
+          <span class="font-sans">2025</span>
         {:else}
           <button class={confetti ? "animate-wiggle" : ""} on:click={party}>🎉</button>
         {/if}
