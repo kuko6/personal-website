@@ -17,9 +17,9 @@
     <h2>About me</h2>
     <div class="space-y-3">
       <p class="leading-7">
-        I’m passionate about AI and Computer Vision, but also enjoy full-stack development.
+        I’m passionate about AI and Computer Vision, but also enjoy working on full-stack projects.
         I primarily use Python and JavaScript, and love experimenting with new languages and technologies.
-        Beyond coding, I enjoy art galleries, tennis, and skiing.
+        Beyond coding, I enjoy visiting art galleries, playing tennis, hiking, and skiing.
       </p>
       <p class="leading-7">
         You can also find me on:
