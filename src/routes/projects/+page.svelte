@@ -98,6 +98,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
   .project {
 
   }

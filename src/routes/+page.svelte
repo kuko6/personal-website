@@ -51,6 +51,8 @@
 </div>
 
 <style>
+  @reference "../app.css";
+
   .link {
     /* @apply text-indigo-500; */
   }

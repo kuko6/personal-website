@@ -32,7 +32,7 @@
     <Navigation />
   </header>
 
-  <main class="flex-grow pt-6 md:pt-10">
+  <main class="grow pt-6 md:pt-10">
     {#if confetti}
       <div class="confetti">
         <Confetti
@@ -87,11 +87,13 @@
 </div>
 
 <style>
+  @reference "../app.css";
+
   .hover-rotated-underline {
     @apply relative;
   }
   .hover-rotated-underline::after {
-    @apply absolute left-0 bottom-[1px] w-full h-[2px] bg-current
+    @apply absolute left-0 bottom-px w-full h-[2px] bg-current
            opacity-0 ;
     content: '';
     transform: rotate(0.5deg);
