@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import "../app.css";
   import Navigation from "../components/Navigation.svelte";
   import { Confetti } from "svelte-confetti";
@@ -32,15 +32,15 @@
     <Navigation />
   </header>
 
-  <main class="flex-grow pt-6 md:pt-10">
+  <main class="grow pt-4 md:pt-8">
     {#if confetti}
       <div class="confetti">
         <Confetti
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
-          duration="6800"
-          amount="310"
+          duration={6800}
+          amount={310}
           iterationCount="infinite"
           fallDistance="130vh"
         />
@@ -51,9 +51,9 @@
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
-          duration="6800"
-          amount="310"
-          iterationCount="2"
+          duration={6800}
+          amount={310}
+          iterationCount={2}
           fallDistance="130vh"
         />
       </div>
@@ -61,7 +61,7 @@
     <slot />
   </main>
 
-  <footer class="pb-10 pt-14 h-full w-full font-sans leading-7">
+  <footer class="pb-10 pt-16 h-full w-full font-sans leading-7">
     <div
       class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
       role="group"
@@ -87,11 +87,13 @@
 </div>
 
 <style>
+  @reference "../app.css";
+
   .hover-rotated-underline {
     @apply relative;
   }
   .hover-rotated-underline::after {
-    @apply absolute left-0 bottom-[1px] w-full h-[2px] bg-current
+    @apply absolute left-0 bottom-px w-full h-[2px] bg-current
            opacity-0 ;
     content: '';
     transform: rotate(0.5deg);
