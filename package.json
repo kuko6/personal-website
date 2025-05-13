@@ -1,18 +1,24 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^6.0.0",
     "@sveltejs/kit": "^2.20.8",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@tailwindcss/vite": "^4.0.0",
     "postcss": "^8.5.3",
     "svelte": "^5.28.2",
     "svelte-confetti": "^2.3.1",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
     "tailwindcss": "^4.1.6",
     "vite": "^6.3.5",
     "@tailwindcss/postcss": "^4.1.6"

@@ -1,7 +1,13 @@
-<script>
-  import Project from "../../components/Project.svelte";
+<script lang="ts">
+  // import Project from "../../components/Project.svelte";
+  type Project = {
+    "name": string,
+    "description": string,
+    "ref": string,
+    "used_tech": string[]
+  }
 
-  const project = [
+  const project: Project[] = [
     {
       name: "Simple Pixelart Filter",
       description:

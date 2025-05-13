@@ -17,7 +17,7 @@
     <NavIcon alt={"github logo"} path={"https://github.com/kuko6"}>
       <GithubLogo />
     </NavIcon>
-    <div class="border-l border-black dark:border-white my-2" />
+    <div class="border-l border-black dark:border-white my-2"></div>
     <LightModeButton />
     <DarkModeButton />
   </div>
