@@ -1,11 +1,11 @@
 <script lang="ts">
   // import Project from "../../components/Project.svelte";
   type Project = {
-    "name": string,
-    "description": string,
-    "ref": string,
-    "used_tech": string[]
-  }
+    name: string;
+    description: string;
+    ref: string;
+    used_tech: string[];
+  };
 
   const project: Project[] = [
     {
@@ -24,8 +24,7 @@
     },
     {
       name: "Advent of Code 2024",
-      description:
-        "Solutions for Advent of Code in TypeScript.",
+      description: "Solutions for Advent of Code in TypeScript.",
       ref: "https://github.com/kuko6/aoc24",
       used_tech: ["Deno", "TypeScript"],
     },
@@ -96,7 +95,7 @@
           <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
             [{p.name}]
           </a>
-         <span>- {p.description}</span>
+          <span>- {p.description}</span>
         </li>
       {/each}
     </ul>
@@ -107,7 +106,6 @@
   @reference "../../app.css";
 
   .project {
-
   }
 
   .project:hover {
@@ -124,5 +122,4 @@
     transform: rotate(-2.5deg);
     transform-origin: right bottom;
   } */
-
 </style>

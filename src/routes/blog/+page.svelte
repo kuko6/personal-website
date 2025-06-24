@@ -13,10 +13,10 @@
   .rotated-underline {
     @apply relative;
   }
-  
+
   .rotated-underline::after {
     @apply absolute left-0 bottom-[-4px] w-full h-[6px] bg-current text-indigo-400;
-    content: '';
+    content: "";
     transform: rotate(2deg);
     transform-origin: left bottom;
   }

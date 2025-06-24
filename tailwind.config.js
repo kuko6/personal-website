@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'beige': "#fff9f0",
-        'soft-beige': '#FFFEFB', // #FFFBF5 FFFCF7 FFFEFB
+        beige: "#fff9f0",
+        "soft-beige": "#FFFEFB", // #FFFBF5 FFFCF7 FFFEFB
       },
       keyframes: {
         wiggle: {

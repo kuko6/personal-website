@@ -27,7 +27,9 @@
   }
 </script>
 
-<div class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl w-full">
+<div
+  class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl w-full"
+>
   <header>
     <Navigation />
   </header>
@@ -79,7 +81,9 @@
         {#if isVisible}
           <span class="font-sans">2025</span>
         {:else}
-          <button class={confetti ? "animate-wiggle" : ""} on:click={party}>🎉</button>
+          <button class={confetti ? "animate-wiggle" : ""} on:click={party}
+            >🎉</button
+          >
         {/if}
       </div>
     </div>
@@ -94,8 +98,8 @@
   }
   .hover-rotated-underline::after {
     @apply absolute left-0 bottom-px w-full h-[2px] bg-current
-           opacity-0 ;
-    content: '';
+           opacity-0;
+    content: "";
     transform: rotate(0.5deg);
     transform-origin: left bottom;
   }
