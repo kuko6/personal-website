@@ -11,8 +11,8 @@
     class="flex flex-row justify-end content-center text-base gap-2 font-inter font-bold"
   >
     <NavLink label={"Home"} path={"/"} />
-    <!-- <NavLink label={"Blog"} path={"/blog"} /> -->
     <NavLink label={"Projects"} path={"/projects"} />
+    <!-- <NavLink label={"Blog"} path={"/blog"} /> -->
     <!-- <NavLink label={"Resume"} path={"/cv.pdf"} /> -->
     <NavIcon alt={"github logo"} path={"https://github.com/kuko6"}>
       <GithubLogo />
