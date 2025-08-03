@@ -63,7 +63,7 @@
     <slot />
   </main>
 
-  <footer class="pb-10 pt-16 h-full w-full font-sans leading-7">
+  <footer class="pb-10 pt-16 h-full w-full leading-7">
     <div
       class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
       role="group"
@@ -71,7 +71,7 @@
       on:mouseleave={handleMouseLeave}
     >
       <a
-        class="hover-rotated-underline"
+        class="hover-rotated-underline font-inter"
         href="https://github.com/kuko6/personal-website"
       >
         made by Jakub Povinec,
@@ -79,7 +79,7 @@
 
       <div class="pl-1">
         {#if isVisible}
-          <span class="font-sans">2025</span>
+          <span class="font-inter">2025</span>
         {:else}
           <button class={confetti ? "animate-wiggle" : ""} on:click={party}
             >🎉</button
