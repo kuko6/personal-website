@@ -23,9 +23,9 @@
       used_tech: ["Nix", "Unix"],
     },
     {
-      name: "Advent of Code 2024",
+      name: "Advent of Code",
       description: "Solutions for Advent of Code in TypeScript.",
-      ref: "https://github.com/kuko6/aoc24",
+      ref: "https://github.com/kuko6/advent-of-code",
       used_tech: ["Deno", "TypeScript"],
     },
     {
