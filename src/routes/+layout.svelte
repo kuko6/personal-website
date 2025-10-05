@@ -71,19 +71,23 @@
       on:mouseleave={handleMouseLeave}
     >
       <a
-        class="hover-rotated-underline font-inter"
+        class="hover-rotated-underline font-inter text-sm"
         href="https://github.com/kuko6/personal-website"
       >
         made by Jakub Povinec,
       </a>
 
-      <div class="pl-1">
+      <div class="pl-1 text-sm flex items-center h-5">
         {#if isVisible}
           <span class="font-inter">2025</span>
         {:else}
-          <button class={confetti ? "animate-wiggle" : ""} on:click={party}
-            >🎉</button
+          <button
+            class={confetti ? "animate-wiggle" : ""}
+            on:click={party}
+            style="line-height: 1;"
           >
+            🎉
+          </button>
         {/if}
       </div>
     </div>
@@ -97,7 +101,7 @@
     @apply relative;
   }
   .hover-rotated-underline::after {
-    @apply absolute left-0 bottom-px w-full h-[2px] bg-current
+    @apply absolute left-0 bottom-[-1px] w-full h-[2px] bg-current
            opacity-0;
     content: "";
     transform: rotate(0.5deg);

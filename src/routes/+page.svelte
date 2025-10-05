@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Home - Jakub Povinec</title>
+  <title>Jakub Povinec</title>
 </svelte:head>
 
 <div class="space-y-6">

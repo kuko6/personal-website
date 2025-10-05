@@ -5,18 +5,15 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-:global(body) {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 @layer base {
   body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     transition:
       background-color 0.2s ease-in-out,
       color 0.2s ease-in-out;
-    @apply bg-soft-beige dark:bg-stone-800 text-gray-800 dark:text-white;
+    @apply bg-soft-beige dark:bg-stone-800 text-gray-700 dark:text-white;
   }
 
   html {
