@@ -18,14 +18,6 @@
       open_source: true,
     },
     {
-      name: "Nix Experiments",
-      description:
-        "Collection of dev environments and system configurations written in Nix.",
-      ref: "https://github.com/kuko6/nix-config",
-      used_tech: ["Nix", "Unix"],
-      open_source: true,
-    },
-    {
       name: "Advent of Code",
       description: "Solutions for Advent of Code in TypeScript.",
       ref: "https://github.com/kuko6/advent-of-code",
