@@ -11,47 +11,47 @@
   const project: Project[] = [
     {
       name: "Simple Pixelart Filter",
-      description:
-        "An app that allows you to pixelate images, quantize colors and display color palettes.",
+      description: "An app that allows you to pixelate images, quantize colors and display color palettes.",
       ref: "https://github.com/kuko6/pixel-filter",
       used_tech: ["Python", "OpenCV", "Gradio"],
       open_source: true,
     },
     {
       name: "Advent of Code",
-      description: "Solutions for Advent of Code in TypeScript.",
+      description: "My solutions for Advent of Code 🎄.",
       ref: "https://github.com/kuko6/advent-of-code",
       used_tech: ["Deno", "TypeScript"],
       open_source: true,
     },
     {
       name: "Click Correction",
-      description:
-        "Method for Segmentation of Vestibular Schwannomas from Brain MRI Scans. The method is based on an auxilarly correction network, which utilises user-defined clicks to refines inaccurate segmentation.",
+      description: `A method for segmentation of vestibular schwannomas from brain MRI scans. It is based on an
+      auxiliary correction network, which utilises user-defined clicks to refine inaccurate segmentations.`,
       ref: "https://github.com/kuko6/click-correction",
       used_tech: ["Pytorch", "OpenCV", "AzureML", "Docker"],
       open_source: true,
     },
     {
       name: "Style Transfer",
-      description:
-        "Implementation of style transfer using Adaptive Instance Normalization (AdaIN) with a VGG-19-based architecture, trained on WikiArt and COCO datasets.",
+      description: `Implementation of style transfer using Adaptive Instance Normalization (AdaIN) with a VGG-19-based
+      architecture, trained on WikiArt and COCO datasets.`,
       ref: "https://github.com/kuko6/style-transfer",
       used_tech: ["Pytorch", "Gradio"],
       open_source: true,
     },
     {
       name: "Various Computer Vision Assignments",
-      description:
-        "Collection of various computer vision assignments (contour analysis, image correction, segmentation and classification).",
+      description: `A collection of various computer vision assignments, including contour analysis, image correction,
+      segmentation and classification.`,
       ref: "https://github.com/kuko6/cv-assignments",
       used_tech: ["Pytorch", "OpenCV"],
       open_source: true,
     },
     {
       name: "Rezervi",
-      description:
-        "Mobile app for a room reservation system. Allows users to view, create or edit room reservations aswell as to create listings for new rooms. The app also includes a custom chating service, which enables direct communication between users and room owner.",
+      description: `A mobile app for managing room reservations. It allows users to view, create, and edit reservations,
+      as well as list new rooms. The app also includes a custom chat service for direct communication between
+      users and room owners.`,
       ref: "https://github.com/mtaa-rezervi",
       used_tech: [
         "Node.js",
@@ -65,8 +65,9 @@
     },
     {
       name: "Application for Management of Scientific Research Projects",
-      description:
-        "Team project for the Slovak Center of Scientific and Technical Information. The application aimed to improve registration, monitoring, and overall management of research projects. Our team contributed to both the frontend and backend development of the application.",
+      description: `A team project for the Slovak Center of Scientific and Technical Information. The application aimed
+      to improve registration, monitoring, and overall management of research projects. Our team contributed to both
+      the frontend and backend development of the application.`,
       ref: "javascript:void(0)",
       used_tech: [
         "Node.js",
