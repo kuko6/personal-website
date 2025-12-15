@@ -17,11 +17,16 @@
     <h2>About me</h2>
     <div class="space-y-3">
       <p class="leading-7">
-        I’m passionate about AI and Computer Vision, but also enjoy working on
-        full-stack projects. I primarily use Python and JavaScript, and love
-        experimenting with new languages and technologies. Beyond coding, I
-        enjoy visiting art galleries, playing tennis, hiking, and skiing.
+        I'm currently working as a research engineer in experimental oncology,
+        building tools and pipelines for analysing microscopy data. I’m most
+        comfortable with Python and TypeScript, but I also enjoy experimenting
+        with new languages and building full-stack projects on the side.
       </p>
+      <p class="leading-7">
+        Outside of coding, I like visiting art galleries, playing tennis,
+        skiing, and hiking.
+      </p>
+      <br />
       <p class="leading-7">
         You can also find me on:
         <a
@@ -49,10 +54,10 @@
         >
           [Click Correction]
         </a>
-        <span
-          >- A two-stage segmentation method where an initial network is refined
-          using user clicks via an auxiliary correction network.</span
-        >
+        <span>
+          - A two-stage segmentation method where an initial network is refined
+          using user clicks through an auxiliary correction network.
+        </span>
       </li>
       <li>
         <a
@@ -61,10 +66,10 @@
         >
           [Style Transfer]
         </a>
-        <span
-          >- Pytorch implementation of style transfer based on Adaptive Instance
-          Normalization.</span
-        >
+        <span>
+          - A Pytorch implementation of style transfer based on Adaptive
+          Instance Normalization.
+        </span>
       </li>
     </ul>
   </div>
