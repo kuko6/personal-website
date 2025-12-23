@@ -71,7 +71,7 @@
       on:mouseleave={handleMouseLeave}
     >
       <a
-        class="hover-rotated-underline font-inter text-sm"
+        class="hover-rotated-underline font-plex text-sm"
         href="https://github.com/kuko6/personal-website"
       >
         made by Jakub Povinec,
@@ -79,7 +79,7 @@
 
       <div class="pl-1 text-sm flex items-center h-5">
         {#if isVisible}
-          <span class="font-inter">2025</span>
+          <span class="font-plex">2025</span>
         {:else}
           <button
             class={confetti ? "animate-wiggle" : ""}

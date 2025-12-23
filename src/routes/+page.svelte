@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Jakub Povinec</title>
+  <title>jpovinec.me</title>
 </svelte:head>
 
 <div class="space-y-6">
@@ -30,13 +30,17 @@
       <p class="leading-7">
         You can also find me on:
         <a
+          href="https://github.com/kuko6"
+          class="link text-indigo-500 dark:text-indigo-400">[GitHub]</a
+        >
+        <a
           href="https://mas.to/@kuko6"
           class="link text-indigo-500 dark:text-indigo-400">[Mastodon]</a
         >
-        <a
-          href="https://bsky.app/profile/kuko6.bsky.social"
-          class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a
-        >
+        <!-- <a -->
+        <!--   href="https://bsky.app/profile/kuko6.bsky.social" -->
+        <!--   class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a -->
+        <!-- > -->
         <a
           href="https://www.linkedin.com/in/jakub-povinec/"
           class="link text-indigo-500 dark:text-indigo-400">[LinkedIn]</a
@@ -54,7 +58,7 @@
         >
           [Click Correction]
         </a>
-        <span>
+        <span class="font-plex">
           - A two-stage segmentation method where an initial network is refined
           using user clicks through an auxiliary correction network.
         </span>
@@ -66,7 +70,7 @@
         >
           [Style Transfer]
         </a>
-        <span>
+        <span class="font-plex">
           - A Pytorch implementation of style transfer based on Adaptive
           Instance Normalization.
         </span>
@@ -87,7 +91,7 @@
   } */
 
   .link:hover {
-    @apply bg-indigo-500 text-white py-0.5;
+    @apply bg-indigo-500 text-white;
   }
 
   .rotated-underline {

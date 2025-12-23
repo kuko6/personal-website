@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        beige: "#fff9f0",
-        "soft-beige": "#FFFEFB", // #FFFBF5 FFFCF7 FFFEFB
+        "soft-beige": "#FFFEFB",
+        // "blackish": "#241969"
       },
       keyframes: {
         wiggle: {
@@ -21,6 +21,8 @@ export default {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        source: ["Source Sans 3", "sans-serif"],
+        plex: ["IBM Plex Sans", "sans-serif"],
         jetbrains: ["JetBrains Mono", "monospace"],
         mono: ["IBM Plex Mono", "monospace"],
       },

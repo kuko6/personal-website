@@ -83,15 +83,12 @@
 </script>
 
 <svelte:head>
-  <title>Projects | Jakub Povinec</title>
+  <title>Projects | jpovinec.me</title>
 </svelte:head>
 <div class="space-y-5">
   <h1><span class="rotated-underline">Projects</span></h1>
   <div class="flex flex-col gap-3">
-    <!-- {#each project as p}
-      <Project project={p} />
-    {/each} -->
-    <ul class="list-disc mx-6 space-y-2">
+    <ul class="list-disc mx-6 space-y-2 font-plex">
       {#each project as p}
         <li>
           {#if p.open_source}
@@ -120,7 +117,7 @@
   }
 
   .project:hover {
-    @apply bg-indigo-500 text-white py-0.5;
+    @apply bg-indigo-500 text-white;
   }
 
   .rotated-underline {

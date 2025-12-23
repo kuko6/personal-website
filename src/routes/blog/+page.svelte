@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>Blog | Jakub Povinec</title>
+  <title>Blog | jpovinec.me</title>
 </svelte:head>
 <div class="space-y-5">
   <h1><span class="rotated-underline">Blog</span></h1>

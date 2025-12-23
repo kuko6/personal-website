@@ -7,7 +7,7 @@
 </script>
 
 <button
-  class="button p-2 hover:bg-orange-200 hover:text-black rounded-md cursor-pointer"
+  class="button p-2 hover:bg-orange-200 hover:text-black rounded cursor-pointer"
   on:click={toggleDarkMode}
   aria-label="Switch to light mode"
 >
