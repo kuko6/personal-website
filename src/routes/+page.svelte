@@ -83,12 +83,8 @@
   @reference "../app.css";
 
   .link {
-    /* @apply text-indigo-500; */
+    /* @apply text-indigo-500 dark:bg-indigo-400; */
   }
-
-  /* .link::-prefers-color-scheme-dark {
-    @apply text-indigo-400;
-  } */
 
   .link:hover {
     @apply bg-indigo-500 text-white;
