@@ -3,17 +3,16 @@
   import Navigation from "../components/Navigation.svelte";
   import { Confetti } from "svelte-confetti";
 
-  let confetti = false;
-  let currentDate = new Date();
-  let targetDate = new Date(currentDate.getFullYear(), 9, 27);
+  const currentDate = new Date();
+  const bdayDate = new Date(currentDate.getFullYear(), 9, 27);
 
-  function party() {
+  let confetti = false;
+  function enableConfetti() {
     confetti = !confetti;
   }
 
   let isVisible = true;
   let isHovering = false;
-
   function handleMouseEnter() {
     isHovering = true;
     let a = setTimeout(() => {
@@ -38,25 +37,42 @@
     {#if confetti}
       <div class="confetti">
         <Confetti
+          disableForReducedMotion
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
           duration={6800}
           amount={310}
           iterationCount="infinite"
-          fallDistance="130vh"
+          fallDistance="120vh"
         />
       </div>
-    {:else if currentDate.toDateString() === targetDate.toDateString()}
+    {:else if new Date().getMonth() === 11}
       <div class="confetti">
         <Confetti
+          rounded
+          disableForReducedMotion
+          x={[-5, 5]}
+          y={[0, 0.1]}
+          delay={[0, 10000]}
+          duration={9000}
+          colorArray={["#b9ecff", "#9ae4ff", "#e3f7ff"]}
+          amount={100}
+          iterationCount="infinite"
+          fallDistance="100vh"
+        />
+      </div>
+    {:else if currentDate.toDateString() === bdayDate.toDateString()}
+      <div class="confetti">
+        <Confetti
+          disableForReducedMotion
           x={[-5, 5]}
           y={[0, 0.1]}
           delay={[0, 10000]}
           duration={6800}
           amount={310}
           iterationCount={2}
-          fallDistance="130vh"
+          fallDistance="120vh"
         />
       </div>
     {/if}
@@ -83,7 +99,7 @@
         {:else}
           <button
             class={confetti ? "animate-wiggle" : ""}
-            on:click={party}
+            on:click={enableConfetti}
             style="line-height: 1;"
           >
             🎉
