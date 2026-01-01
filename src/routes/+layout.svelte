@@ -95,7 +95,7 @@
 
       <div class="pl-1 text-sm flex items-center h-5">
         {#if isVisible}
-          <span class="font-plex">2025</span>
+          <span class="font-plex">2026</span>
         {:else}
           <button
             class={confetti ? "animate-wiggle" : ""}
