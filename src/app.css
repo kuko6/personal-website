@@ -23,7 +23,7 @@
   }
 
   p {
-    @apply font-plex text-balance;
+    @apply font-plex;
   }
 
   a {
