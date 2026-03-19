@@ -17,10 +17,10 @@
     <h2>About me</h2>
     <div class="space-y-3">
       <p class="leading-7">
-        I'm currently working as a research engineer in cancer research, where I
-        develop tools and pipelines for analysing microscopy data. I mainly work
-        with Python, R and TypeScript, but I also enjoy picking up new languages
-        and building full-stack projects in my free time.
+        I'm currently working as a research engineer in cancer biology, where I
+        develop tools and pipelines for analysing biomedical data. I mostly work
+        with Python, R and JavaScript, but I also enjoy experimenting with new
+        languages and building full-stack projects in my free time.
       </p>
       <p class="leading-7">
         Outside of coding, I like visiting art galleries, playing tennis,
