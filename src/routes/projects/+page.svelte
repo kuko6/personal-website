@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import Project from "../../components/Project.svelte";
   type Project = {
     name: string;
     description: string;
@@ -10,8 +9,16 @@
 
   const project: Project[] = [
     {
+      name: "ChickenRun",
+      description: `A simple multiplayer game where up to 6 players race as chickens 🐓.`,
+      ref: "https://github.com/kuko6/chickens",
+      used_tech: ["Deno", "JavaScript", "WebSockets", "Docker"],
+      open_source: true,
+    },
+    {
       name: "Simple Pixelart Filter",
-      description: "An app that allows you to pixelate images, quantize colors and display color palettes.",
+      description:
+        "An app that allows you to pixelate images, quantize colors and display color palettes.",
       ref: "https://github.com/kuko6/pixel-filter",
       used_tech: ["Python", "OpenCV", "Gradio"],
       open_source: true,
