@@ -28,7 +28,7 @@
       </p>
       <br />
       <p class="leading-7">
-        You can also find me on:
+        You can find me on:
         <a
           href="https://github.com/kuko6"
           class="link text-indigo-500 dark:text-indigo-400">[GitHub]</a
