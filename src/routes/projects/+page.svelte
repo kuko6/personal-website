@@ -10,7 +10,7 @@
   const project: Project[] = [
     {
       name: "ChickenRun",
-      description: `A simple multiplayer game where up to 6 players race as chickens 🐓.`,
+      description: `A simple multiplayer game where up to 6 players race as chickens.`,
       ref: "https://github.com/kuko6/chickens",
       used_tech: ["Deno", "JavaScript", "WebSockets", "Docker"],
       open_source: true,
