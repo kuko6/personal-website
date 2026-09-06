@@ -184,6 +184,7 @@
     background-size: 160px 200px;
     display: block;
     height: 40px;
+    image-rendering: pixelated;
     width: 40px;
   }
 
