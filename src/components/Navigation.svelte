@@ -1,10 +1,11 @@
 <script>
+  export let compact = false;
   import LightModeButton from "./LightModeButton.svelte";
   import DarkModeButton from "./DarkModeButton.svelte";
   import NavLink from "../components/NavLink.svelte";
 </script>
 
-<nav class="pt-5 md:pt-10 dark:text-white">
+<nav class={`${compact ? "" : "pt-5 md:pt-10"} dark:text-white`} aria-label="Main navigation">
   <div
     class="flex flex-row justify-end content-center gap-2"
   >

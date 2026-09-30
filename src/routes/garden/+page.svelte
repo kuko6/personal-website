@@ -2,9 +2,8 @@
 </script>
 
 <svelte:head>
-  <title>Blog - Jakub Povinec</title>
+  <title>Garden | jpovinec.me</title>
 </svelte:head>
-<div class="space-y-6">
   <!--
   Notes
     - make a md preprocessor
@@ -13,22 +12,32 @@
       - inspo: https://io0.github.io/music/
     - films
   -->
-  <h1 class="">Garden 🪴</h1>
-  <!-- <ul class="list-disc mx-6 space-y-2">
-    <li>Some Notes</li>
-    <li>Fav things</li>
-  </ul> -->
+<div class="space-y-5">
+  <h1><span class="rotated-underline">Garden</span> 🪴</h1>
+  <p class="leading-7">A collection of notes, interests, and other things.</p>
+
+  <ul class="list-disc mx-6 space-y-2 font-plex">
+    <li>
+      <a class="text-link" href="/garden/music">[Music]</a>
+      <span>- what I'm listening to, plus a musicwall of recently played albums.</span>
+    </li>
+  </ul>
 </div>
 
 <style>
   .rotated-underline {
-    @apply relative;
+    position: relative;
   }
 
   .rotated-underline::after {
-    @apply absolute left-0 bottom-[-4px] w-full h-[6px] bg-current text-indigo-400;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 6px;
+    background: var(--color-indigo-400);
     content: "";
-    transform: rotate(2deg);
-    transform-origin: left bottom;
+    transform: rotate(-1deg);
+    transform-origin: right bottom;
   }
 </style>

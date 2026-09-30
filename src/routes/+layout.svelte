@@ -1,8 +1,15 @@
 <script lang="ts">
   import "../app.css";
+  import { page } from "$app/state";
+  import type { Snippet } from "svelte";
   import Navigation from "../components/Navigation.svelte";
+  import LightModeButton from "../components/LightModeButton.svelte";
+  import DarkModeButton from "../components/DarkModeButton.svelte";
   import { Confetti } from "svelte-confetti";
   import { createChickenEasterEgg } from "./chickenEasterEgg.svelte.js";
+
+  let { children }: { children: Snippet } = $props();
+  const isMusicwall = $derived(page.url.pathname === "/garden/music/wall");
 
   const {
     state: chicken,
@@ -16,12 +23,12 @@
   const currentDate = new Date();
   const bdayDate = new Date(currentDate.getFullYear(), 9, 27);
 
-  let confetti = false;
+  let confetti = $state(false);
   function enableConfetti() {
     confetti = !confetti;
   }
 
-  let isVisible = true;
+  let isVisible = $state(true);
   let isHovering = false;
   function handleMouseEnter() {
     isHovering = true;
@@ -41,19 +48,40 @@
 </svelte:head>
 
 <svelte:window
-  on:pointermove={trackCursor}
-  on:keydown={handleKeydown}
-  on:blur={forgetCursor}
+  onpointermove={trackCursor}
+  onkeydown={handleKeydown}
+  onblur={forgetCursor}
 />
 
 <div
-  class="flex flex-col min-h-screen mx-auto px-4 md:px-0 md:max-w-3xl w-full"
+  class={`flex flex-col min-h-screen mx-auto w-full ${isMusicwall ? "" : "px-4 md:px-0 md:max-w-3xl"}`}
 >
-  <header>
-    <Navigation />
+  <header class:wall-header={isMusicwall}>
+    {#if isMusicwall}
+      <nav
+        class="wall-breadcrumb font-plex text-base font-medium"
+        aria-label="Breadcrumb"
+      >
+        <a href="/garden/music" class="text-link">[Music]</a>
+        <span class="font-plex" aria-hidden="true">/</span>
+        <h1 class="font-plex text-base font-medium">
+          <span class="rotated-underline font-plex">Musicwall</span>
+        </h1>
+      </nav>
+      <div
+        class="flex items-center gap-2"
+        role="group"
+        aria-label="Color theme"
+      >
+        <LightModeButton />
+        <DarkModeButton />
+      </div>
+    {:else}
+      <Navigation />
+    {/if}
   </header>
 
-  <main class="grow pt-4 md:pt-8">
+  <main class={`grow ${isMusicwall ? "" : "pt-4 md:pt-8"}`}>
     {#if confetti}
       <div class="confetti">
         <Confetti
@@ -96,38 +124,40 @@
         />
       </div>
     {/if}
-    <slot />
+    {@render children()}
   </main>
 
-  <footer class="pb-10 pt-16 h-full w-full leading-7">
-    <div
-      class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
-      role="group"
-      on:mouseenter={handleMouseEnter}
-      on:mouseleave={handleMouseLeave}
-    >
-      <a
-        class="hover-rotated-underline font-plex text-sm"
-        href="https://github.com/kuko6/personal-website"
+  {#if !isMusicwall}
+    <footer class="pb-10 pt-16 h-full w-full leading-7">
+      <div
+        class="container mx-auto flex items-center justify-center text-gray-400 dark:text-gray-500"
+        role="group"
+        onmouseenter={handleMouseEnter}
+        onmouseleave={handleMouseLeave}
       >
-        made by Jakub Povinec,
-      </a>
+        <a
+          class="hover-rotated-underline font-plex text-sm"
+          href="https://github.com/kuko6/personal-website"
+        >
+          made by Jakub Povinec,
+        </a>
 
-      <div class="pl-1 text-sm flex items-center h-5">
-        {#if isVisible}
-          <span class="font-plex">2026</span>
-        {:else}
-          <button
-            class={confetti ? "animate-wiggle" : ""}
-            on:click={enableConfetti}
-            style="line-height: 1;"
-          >
-            🎉
-          </button>
-        {/if}
+        <div class="pl-1 text-sm flex items-center h-5">
+          {#if isVisible}
+            <span class="font-plex">2026</span>
+          {:else}
+            <button
+              class={confetti ? "animate-wiggle" : ""}
+              onclick={enableConfetti}
+              style="line-height: 1;"
+            >
+              🎉
+            </button>
+          {/if}
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  {/if}
 </div>
 
 {#if chicken.phase === "jumping" || chicken.phase === "following" || chicken.phase === "popping"}
@@ -138,7 +168,7 @@
     style:transform={`translate3d(${chicken.position.x}px, ${chicken.position.y}px, 0)`}
     aria-label="Send the chicken home"
     title="Click to send me home"
-    on:click={popChicken}
+    onclick={popChicken}
   >
     {#if chicken.phase === "popping"}
       <span class="chicken-pop-sprite" aria-hidden="true"></span>
@@ -157,6 +187,45 @@
 
 <style>
   @reference "../app.css";
+
+  .wall-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 48px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    background: var(--color-soft-beige, #fffefb);
+  }
+
+  :global(.dark) .wall-header {
+    background: var(--color-stone-800);
+  }
+  .wall-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rotated-underline {
+    position: relative;
+  }
+
+  .rotated-underline::after {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 4px;
+    background: var(--color-indigo-400);
+    content: "";
+    transform: rotate(-2deg);
+    transform-origin: right bottom;
+  }
 
   .hover-rotated-underline {
     @apply relative;
@@ -289,7 +358,8 @@
   }
 
   @keyframes -global-chicken-jump {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
 
