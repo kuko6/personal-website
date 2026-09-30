@@ -2,7 +2,7 @@ import { getContext, onMount, setContext } from "svelte";
 
 const chickenContext = Symbol("chicken-easter-egg");
 
-type ChickenState = "hidden" | "peeking" | "jumping" | "following";
+type ChickenState = "hidden" | "peeking" | "jumping" | "following" | "popping";
 
 export function createChickenEasterEgg() {
   const chickenSize = 40;
@@ -26,6 +26,7 @@ export function createChickenEasterEgg() {
   let animationFrame: number | null = null;
   let previousFrameTime = 0;
   let jumpStartedAt = 0;
+  let popTimeout: ReturnType<typeof setTimeout> | undefined;
 
   onMount(() => {
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -44,6 +45,7 @@ export function createChickenEasterEgg() {
 
     return () => {
       stopFollowing();
+      clearTimeout(popTimeout);
       motionPreference.removeEventListener("change", updateMotionPreference);
     };
   });
@@ -155,11 +157,24 @@ export function createChickenEasterEgg() {
   }
 
   function hideChicken() {
+    clearTimeout(popTimeout);
     stopFollowing();
     if (document.activeElement === elements.follower) {
       elements.link?.focus({ preventScroll: true });
     }
     state.phase = "hidden";
+  }
+
+  function popChicken() {
+    if (state.phase === "popping") return;
+    if (reducedMotion) {
+      hideChicken();
+      return;
+    }
+
+    stopFollowing();
+    state.phase = "popping";
+    popTimeout = setTimeout(hideChicken, 320);
   }
 
   function forgetCursor() {
@@ -177,6 +192,7 @@ export function createChickenEasterEgg() {
     trackCursor,
     handleKeydown,
     hideChicken,
+    popChicken,
     forgetCursor,
   };
 

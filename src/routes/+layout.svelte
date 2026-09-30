@@ -9,7 +9,7 @@
     elements: chickenElements,
     trackCursor,
     handleKeydown,
-    hideChicken,
+    popChicken,
     forgetCursor,
   } = createChickenEasterEgg();
 
@@ -35,6 +35,10 @@
     if (!confetti) isVisible = true;
   }
 </script>
+
+<svelte:head>
+  <link rel="preload" href="/images/chicken-pop.svg" as="image" />
+</svelte:head>
 
 <svelte:window
   on:pointermove={trackCursor}
@@ -126,7 +130,7 @@
   </footer>
 </div>
 
-{#if chicken.phase === "jumping" || chicken.phase === "following"}
+{#if chicken.phase === "jumping" || chicken.phase === "following" || chicken.phase === "popping"}
   <button
     bind:this={chickenElements.follower}
     class="chicken-follower"
@@ -134,16 +138,20 @@
     style:transform={`translate3d(${chicken.position.x}px, ${chicken.position.y}px, 0)`}
     aria-label="Send the chicken home"
     title="Click to send me home"
-    on:click={hideChicken}
+    on:click={popChicken}
   >
-    <span class="chicken-hop">
-      <span
-        class="chicken-sprite"
-        class:chicken-moving={chicken.moving}
-        style:--chicken-sprite={`url("${chicken.sprite}")`}
-        style:transform={`scaleX(${chicken.facing})`}
-      ></span>
-    </span>
+    {#if chicken.phase === "popping"}
+      <span class="chicken-pop-sprite" aria-hidden="true"></span>
+    {:else}
+      <span class="chicken-hop">
+        <span
+          class="chicken-sprite"
+          class:chicken-moving={chicken.moving}
+          style:--chicken-sprite={`url("${chicken.sprite}")`}
+          style:transform={`scaleX(${chicken.facing})`}
+        ></span>
+      </span>
+    {/if}
   </button>
 {/if}
 
@@ -246,6 +254,34 @@
     animation: chicken-run 200ms steps(2) infinite;
   }
 
+  .chicken-pop-sprite {
+    background: url("/images/chicken-pop.svg") no-repeat 0 0 / 160px 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    image-rendering: pixelated;
+    animation: chicken-pop 320ms steps(1) both;
+  }
+
+  @keyframes -global-chicken-pop {
+    0% {
+      background-position: 0 0;
+    }
+
+    25% {
+      background-position: -40px 0;
+    }
+
+    50% {
+      background-position: -80px 0;
+    }
+
+    75%,
+    100% {
+      background-position: -120px 0;
+    }
+  }
+
   @keyframes -global-chicken-run {
     to {
       background-position: -80px -120px;
@@ -265,6 +301,7 @@
   @media (prefers-reduced-motion: reduce) {
     :global(.chicken-peek .chicken-sprite),
     :global(.chicken-jumping .chicken-hop),
+    .chicken-pop-sprite,
     :global(.chicken-moving) {
       animation: none;
     }

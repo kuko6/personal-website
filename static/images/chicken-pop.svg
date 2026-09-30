@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="16" viewBox="0 0 64 16" shape-rendering="crispEdges">
+  <!-- Four 16px frames: puff, burst, scattered feathers, fading flecks. -->
+  <g fill="#626078">
+    <path d="M6 3h4v2h2v2h1v4h-3v2H6v-1H3V8h1V5h2z"/>
+    <path d="M23 1h2v4h2V3h2v2h-2v2h4v2h-4v2h2v2h-2v-2h-2v4h-2v-4h-2v2h-2v-2h2V9h-4V7h4V5h-2V3h2v2h2z"/>
+  </g>
+  <g fill="#e3dfe9">
+    <path d="M6 4h4v2h2v4h-2v2H6v-1H4V8h1V6h1z"/>
+    <path d="M23 2h2v4h2v1h3v2h-4v2h-1v3h-2v-4h-2V9h-3V7h4V6h1z"/>
+    <path d="M34 3h3v2h-1v1h-2zM43 2h2v3h-3V4h1zM33 10h3v2h-1v1h-2zM44 10h3v2h-1v1h-2zM39 13h2v2h-2z"/>
+  </g>
+  <g fill="#fffdf5">
+    <path d="M6 5h4v2h1v2H8v2H6v-1H5V8h1z"/>
+    <path d="M23 5h2v2h2v2h-2v2h-2V9h-2V7h2z"/>
+    <path d="M34 3h2v1h-2zM43 2h1v2h-1zM33 10h2v1h-2zM44 10h2v1h-2z"/>
+  </g>
+  <g fill="#aaa3bb">
+    <path d="M49 1h2v1h-2zM61 2h1v2h-1zM48 12h2v1h-2zM62 13h2v1h-2zM55 15h1v1h-1z"/>
+  </g>
+</svg>
