@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Home - Jakub Povinec</title>
+  <title>jpovinec.me</title>
 </svelte:head>
 
 <div class="space-y-6">
@@ -17,15 +17,34 @@
     <h2>About me</h2>
     <div class="space-y-3">
       <p class="leading-7">
-        I’m passionate about AI and Computer Vision, but also enjoy full-stack development.
-        I primarily use Python and JavaScript, and love experimenting with new languages and technologies.
-        Beyond coding, I enjoy art galleries, tennis, and skiing.
+        I'm currently working as a research engineer in cancer biology, where I
+        develop tools and pipelines for analysing biomedical data. I mostly work
+        with Python, R and JavaScript, but I also enjoy experimenting with new
+        languages and building full-stack projects in my free time.
       </p>
       <p class="leading-7">
-        You can also find me on:
-        <a href="https://mas.to/@kuko6" class="link text-indigo-500 dark:text-indigo-400">[Mastodon]</a>
-        <a href="https://bsky.app/profile/kuko6.bsky.social" class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a>
-        <a href="https://www.linkedin.com/in/jakub-povinec/" class="link text-indigo-500 dark:text-indigo-400">[LinkedIn]</a>
+        Outside of coding, I like visiting art galleries, playing tennis,
+        skiing, and hiking.
+      </p>
+      <br />
+      <p class="leading-7">
+        You can find me on:
+        <a
+          href="https://github.com/kuko6"
+          class="link text-indigo-500 dark:text-indigo-400">[GitHub]</a
+        >
+        <a
+          href="https://mas.to/@kuko6"
+          class="link text-indigo-500 dark:text-indigo-400">[Mastodon]</a
+        >
+        <!-- <a -->
+        <!--   href="https://bsky.app/profile/kuko6.bsky.social" -->
+        <!--   class="link text-indigo-500 dark:text-indigo-400">[Bluesky]</a -->
+        <!-- > -->
+        <a
+          href="https://www.linkedin.com/in/jakub-povinec/"
+          class="link text-indigo-500 dark:text-indigo-400">[LinkedIn]</a
+        >
       </p>
     </div>
   </div>
@@ -33,34 +52,42 @@
     <h2 class="">Featured Projects</h2>
     <ul class="list-disc mx-6">
       <li class="pb-1">
-        <a class="link text-indigo-500 dark:text-indigo-400" href="https://www.github.com/kuko6/click-correction">
+        <a
+          class="link text-indigo-500 dark:text-indigo-400"
+          href="https://www.github.com/kuko6/click-correction"
+        >
           [Click Correction]
         </a>
-        <span>- A two-stage segmentation method where an initial network is refined
-          using user clicks via an auxiliary correction network.</span>
+        <span class="font-plex">
+          - A two-stage segmentation method where an initial network is refined
+          using user clicks through an auxiliary correction network.
+        </span>
       </li>
       <li>
-        <a class="link text-indigo-500 dark:text-indigo-400" href="https://www.github.com/kuko6/style-transfer">
+        <a
+          class="link text-indigo-500 dark:text-indigo-400"
+          href="https://www.github.com/kuko6/style-transfer"
+        >
           [Style Transfer]
         </a>
-        <span>- Pytorch implementation of style transfer based on Adaptive Instance
-          Normalization.</span>
+        <span class="font-plex">
+          - A Pytorch implementation of style transfer based on Adaptive
+          Instance Normalization.
+        </span>
       </li>
     </ul>
   </div>
 </div>
 
 <style>
+  @reference "../app.css";
+
   .link {
-    /* @apply text-indigo-500; */
+    /* @apply text-indigo-500 dark:bg-indigo-400; */
   }
 
-  /* .link::-prefers-color-scheme-dark {
-    @apply text-indigo-400;
-  } */
-
   .link:hover {
-    @apply bg-indigo-500 text-white py-0.5;
+    @apply bg-indigo-500 text-white;
   }
 
   .rotated-underline {

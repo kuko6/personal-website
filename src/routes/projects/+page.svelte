@@ -1,53 +1,80 @@
-<script>
-  import Project from "../../components/Project.svelte";
+<script lang="ts">
+  import { onDestroy } from "svelte";
+  import { getChickenEasterEgg } from "../chickenEasterEgg.svelte.js";
 
-  const project = [
+  const {
+    state: chicken,
+    elements: chickenElements,
+    peekChicken,
+    hidePeek,
+    releaseChicken,
+    hideChicken,
+  } = getChickenEasterEgg();
+
+  onDestroy(() => {
+    if (chicken.phase === "peeking") hideChicken();
+  });
+
+  type Project = {
+    name: string;
+    description: string;
+    ref: string;
+    used_tech: string[];
+    open_source: boolean;
+  };
+
+  const project: Project[] = [
+    {
+      name: "ChickenRun",
+      description: `A simple multiplayer game where up to 6 players race as chickens.`,
+      ref: "https://github.com/kuko6/chickens",
+      used_tech: ["Deno", "JavaScript", "WebSockets", "Docker"],
+      open_source: true,
+    },
     {
       name: "Simple Pixelart Filter",
       description:
         "An app that allows you to pixelate images, quantize colors and display color palettes.",
       ref: "https://github.com/kuko6/pixel-filter",
       used_tech: ["Python", "OpenCV", "Gradio"],
+      open_source: true,
     },
     {
-      name: "Nix Experiments",
-      description:
-        "Collection of dev environments and system configurations written in Nix.",
-      ref: "https://github.com/kuko6/nix-config",
-      used_tech: ["Nix", "Unix"],
-    },
-    {
-      name: "Advent of Code 2024",
-      description:
-        "Solutions for Advent of Code in TypeScript.",
-      ref: "https://github.com/kuko6/aoc24",
+      name: "Advent of Code",
+      description: "My solutions for Advent of Code 🎄.",
+      ref: "https://github.com/kuko6/advent-of-code",
       used_tech: ["Deno", "TypeScript"],
+      open_source: true,
     },
     {
       name: "Click Correction",
-      description:
-        "Method for Segmentation of Vestibular Schwannomas from Brain MRI Scans. The method is based on an auxilarly correction network, which utilises user-defined clicks to refines inaccurate segmentation.",
+      description: `A method for segmentation of vestibular schwannomas from brain MRI scans. It is based on an
+      auxiliary correction network, which utilises user-defined clicks to refine inaccurate segmentations.`,
       ref: "https://github.com/kuko6/click-correction",
       used_tech: ["Pytorch", "OpenCV", "AzureML", "Docker"],
+      open_source: true,
     },
     {
       name: "Style Transfer",
-      description:
-        "Implementation of style transfer using Adaptive Instance Normalization (AdaIN) with a VGG-19-based architecture, trained on WikiArt and COCO datasets.",
+      description: `Implementation of style transfer using Adaptive Instance Normalization (AdaIN) with a VGG-19-based
+      architecture, trained on WikiArt and COCO datasets.`,
       ref: "https://github.com/kuko6/style-transfer",
       used_tech: ["Pytorch", "Gradio"],
+      open_source: true,
     },
     {
       name: "Various Computer Vision Assignments",
-      description:
-        "Collection of various computer vision assignments (contour analysis, image correction, segmentation and classification).",
+      description: `A collection of various computer vision assignments, including contour analysis, image correction,
+      segmentation and classification.`,
       ref: "https://github.com/kuko6/cv-assignments",
       used_tech: ["Pytorch", "OpenCV"],
+      open_source: true,
     },
     {
       name: "Rezervi",
-      description:
-        "Mobile app for a room reservation system. Allows users to view, create or edit room reservations aswell as to create listings for new rooms. The app also includes a custom chating service, which enables direct communication between users and room owner.",
+      description: `A mobile app for managing room reservations. It allows users to view, create, and edit reservations,
+      as well as list new rooms. The app also includes a custom chat service for direct communication between
+      users and room owners.`,
       ref: "https://github.com/mtaa-rezervi",
       used_tech: [
         "Node.js",
@@ -57,11 +84,13 @@
         "Expo",
         "WebSockets",
       ],
+      open_source: true,
     },
     {
       name: "Application for Management of Scientific Research Projects",
-      description:
-        "Team project for the Slovak Center of Scientific and Technical Information. The application aimed to improve registration, monitoring, and overall management of research projects. Our team contributed to both the frontend and backend development of the application.",
+      description: `A team project for the Slovak Center of Scientific and Technical Information. The application aimed
+      to improve registration, monitoring, and overall management of research projects. Our team contributed to both
+      the frontend and backend development of the application.`,
       ref: "javascript:void(0)",
       used_tech: [
         "Node.js",
@@ -71,26 +100,62 @@
         "PostgreSQL",
         "Docker",
       ],
+      open_source: false,
     },
   ];
 </script>
 
 <svelte:head>
-  <title>Projects - Jakub Povinec</title>
+  <title>Projects | jpovinec.me</title>
 </svelte:head>
 <div class="space-y-5">
-  <h1>Projects</h1>
+  <h1><span class="rotated-underline">Projects</span></h1>
   <div class="flex flex-col gap-3">
-    <!-- {#each project as p}
-      <Project project={p} />
-    {/each} -->
-    <ul class="list-disc mx-6 space-y-2">
+    <ul class="list-disc mx-6 space-y-2 font-plex">
       {#each project as p}
         <li>
-          <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
-            [{p.name}]
-          </a>
-         <span>- {p.description}</span>
+          {#if p.open_source}
+            {#if p.name === "ChickenRun"}
+              <span
+                class="chicken-project"
+                onpointerenter={peekChicken}
+                onpointerleave={hidePeek}
+                onfocusin={peekChicken}
+                onfocusout={hidePeek}
+              >
+                <a
+                  bind:this={chickenElements.link}
+                  class="project text-indigo-500 dark:text-indigo-400"
+                  href={p.ref}
+                >
+                  [{p.name}]
+                </a>
+                {#if chicken.phase === "peeking"}
+                  <button
+                    class="chicken-peek"
+                    aria-label="Let the chicken out"
+                    title="Click to let me out! Click me again or press Escape to send me home."
+                    onclick={releaseChicken}
+                  >
+                    <span
+                      class="chicken-sprite"
+                      style:--chicken-sprite={`url("${chicken.sprite}")`}
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                {/if}
+              </span>
+            {:else}
+              <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
+                [{p.name}]
+              </a>
+            {/if}
+          {:else}
+            <span class="text-slate-400 dark:text-slate-300"
+              >[{p.name}] <span class="">(closed source)</span></span
+            >
+          {/if}
+          <span>- {p.description}</span>
         </li>
       {/each}
     </ul>
@@ -98,23 +163,20 @@
 </div>
 
 <style>
-  .project {
-
-  }
+  @reference "../../app.css";
 
   .project:hover {
-    @apply bg-indigo-500 text-white py-0.5;
+    @apply bg-indigo-500 text-white;
   }
 
-  /* .rotated-underline {
+  .rotated-underline {
     @apply relative;
   }
 
   .rotated-underline::after {
-    @apply absolute left-0 bottom-[-2px] w-full h-[6px] bg-current text-indigo-400;
-    content: '';
-    transform: rotate(-2.5deg);
+    @apply absolute left-0 bottom-[-8px] w-full h-[6px] bg-current text-indigo-400;
+    content: "";
+    transform: rotate(1deg);
     transform-origin: right bottom;
-  } */
-
+  }
 </style>
