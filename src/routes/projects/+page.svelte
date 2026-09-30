@@ -1,5 +1,19 @@
 <script lang="ts">
-  import { tick } from "svelte";
+  import { onDestroy } from "svelte";
+  import { getChickenEasterEgg } from "../chickenEasterEgg.svelte.js";
+
+  const {
+    state: chicken,
+    elements: chickenElements,
+    peekChicken,
+    hidePeek,
+    releaseChicken,
+    hideChicken,
+  } = getChickenEasterEgg();
+
+  onDestroy(() => {
+    if (chicken.phase === "peeking") hideChicken();
+  });
 
   type Project = {
     name: string;
@@ -89,30 +103,6 @@
       open_source: false,
     },
   ];
-
-  let chickenRunning = false;
-
-  async function startChickenRun(event: PointerEvent | FocusEvent) {
-    const link = event.currentTarget as HTMLAnchorElement;
-    const runner = link.querySelector<HTMLElement>(".chicken-runner");
-    const chicken = link.querySelector<HTMLElement>(".running-chicken");
-
-    if (!runner || !chicken) return;
-
-    const chickenOffset = 4;
-    const linkRight = link.getBoundingClientRect().right;
-    const distance = Math.max(0, window.innerWidth - linkRight - chickenOffset);
-
-    runner.style.setProperty("--chicken-run-distance", `${distance}px`);
-    chicken.style.setProperty(
-      "--chicken-sprite",
-      `url("/images/${Math.random() < 0.5 ? "chicken" : "imro"}.png")`,
-    );
-
-    chickenRunning = false;
-    await tick();
-    chickenRunning = true;
-  }
 </script>
 
 <svelte:head>
@@ -125,21 +115,41 @@
       {#each project as p}
         <li>
           {#if p.open_source}
-            <a
-              class="project text-indigo-500 dark:text-indigo-400"
-              class:chicken-project={p.name === "ChickenRun"}
-              class:chicken-running={p.name === "ChickenRun" && chickenRunning}
-              href={p.ref}
-              onpointerenter={startChickenRun}
-              onfocus={startChickenRun}
-            >
-              [{p.name}]
-              {#if p.name === "ChickenRun"}
-                <span class="chicken-runner" aria-hidden="true">
-                  <span class="running-chicken"></span>
-                </span>
-              {/if}
-            </a>
+            {#if p.name === "ChickenRun"}
+              <span
+                class="chicken-project"
+                onpointerenter={peekChicken}
+                onpointerleave={hidePeek}
+                onfocusin={peekChicken}
+                onfocusout={hidePeek}
+              >
+                <a
+                  bind:this={chickenElements.link}
+                  class="project text-indigo-500 dark:text-indigo-400"
+                  href={p.ref}
+                >
+                  [{p.name}]
+                </a>
+                {#if chicken.phase === "peeking"}
+                  <button
+                    class="chicken-peek"
+                    aria-label="Let the chicken out"
+                    title="Click to let me out! Click me again or press Escape to send me home."
+                    onclick={releaseChicken}
+                  >
+                    <span
+                      class="chicken-sprite"
+                      style:--chicken-sprite={`url("${chicken.sprite}")`}
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                {/if}
+              </span>
+            {:else}
+              <a class="project text-indigo-500 dark:text-indigo-400" href={p.ref}>
+                [{p.name}]
+              </a>
+            {/if}
           {:else}
             <span class="text-slate-400 dark:text-slate-300"
               >[{p.name}] <span class="">(closed source)</span></span
@@ -155,79 +165,8 @@
 <style>
   @reference "../../app.css";
 
-  .project {
-  }
-
   .project:hover {
     @apply bg-indigo-500 text-white;
-  }
-
-  .chicken-project {
-    @apply relative inline-block;
-  }
-
-  .chicken-runner {
-    bottom: calc(100% + 0.8rem);
-    height: 24px;
-    width: 24px;
-    left: calc(100% + 0.25rem);
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .running-chicken {
-    background-image: var(--chicken-sprite, url("/images/chicken.png"));
-    background-position: 0 -120px;
-    background-repeat: no-repeat;
-    background-size: 160px 200px;
-    display: block;
-    height: 40px;
-    image-rendering: pixelated;
-    width: 40px;
-  }
-
-  .chicken-project.chicken-running .chicken-runner {
-    animation: chicken-race 4s linear 2s both;
-    opacity: 1;
-  }
-
-  .chicken-project.chicken-running .running-chicken {
-    animation: chicken-run 200ms steps(2) 2s infinite;
-  }
-
-  @keyframes chicken-run {
-    to {
-      background-position: -80px -120px;
-    }
-  }
-
-  @keyframes chicken-race {
-    from {
-      opacity: 0;
-      transform: translateX(0);
-    }
-
-    1% {
-      opacity: 1;
-    }
-
-    99% {
-      opacity: 1;
-    }
-
-    to {
-      transform: translateX(var(--chicken-run-distance, 0px));
-      opacity: 0;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .chicken-project.chicken-running .chicken-runner,
-    .chicken-project.chicken-running .running-chicken {
-      animation: none;
-    }
   }
 
   .rotated-underline {
