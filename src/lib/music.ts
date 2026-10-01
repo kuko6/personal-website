@@ -1,4 +1,4 @@
-export type MusicSource = "demo" | "lastfm" | "unconfigured";
+export type MusicSource = "lastfm" | "unconfigured";
 
 export interface MusicTrack {
   name: string;

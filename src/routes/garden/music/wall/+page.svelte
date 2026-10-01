@@ -126,10 +126,6 @@
   />
 </svelte:head>
 
-{#if data.feed.source === "demo"}
-  <p class="sample-note">Sample listening history</p>
-{/if}
-
 <div class="album-wall" aria-label="Albums, most recently listened first">
   {#each albums as album, index (album.id)}
     <a
@@ -185,12 +181,6 @@
 </div>
 
 <style>
-  .sample-note {
-    margin: 0;
-    padding: 3px 12px 5px;
-    color: var(--color-gray-500);
-    font-size: 11px;
-  }
   .album-wall {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -259,8 +249,7 @@
     font-size: 14px;
     text-align: center;
   }
-  :global(.dark) .archive-status,
-  :global(.dark) .sample-note {
+  :global(.dark) .archive-status {
     color: var(--color-gray-400);
   }
   @media (min-width: 1920px) {

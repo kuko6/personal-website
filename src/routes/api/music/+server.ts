@@ -1,4 +1,3 @@
-import { dev } from "$app/environment";
 import { env } from "$env/dynamic/private";
 import { json } from "@sveltejs/kit";
 import { musicFeed, MusicRequestError } from "$lib/server/lastfm";
@@ -17,7 +16,6 @@ export const GET: RequestHandler = async ({ fetch, url, platform }) => {
     const feed = await musicFeed(fetch, {
       username: value("LASTFM_USERNAME") || "kuko6",
       apiKey,
-      demo: value("MUSIC_DEMO") === "true" || (dev && !apiKey),
     }, view, url.searchParams.get("cursor"));
     return json(feed, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {

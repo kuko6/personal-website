@@ -1,10 +1,8 @@
 import { albumsFromTracks, type MusicFeed, type MusicTrack } from "../music";
-import { demoFeed } from "./music-demo";
 
 export interface MusicConfig {
   username: string;
   apiKey: string;
-  demo: boolean;
 }
 
 export class MusicRequestError extends Error {
@@ -123,10 +121,6 @@ export async function musicFeed(
   view: "overview" | "wall",
   cursor: string | null = null,
 ): Promise<MusicFeed> {
-  if (config.demo) {
-    try { return demoFeed(config.username, view, cursor); }
-    catch { throw new MusicRequestError("Invalid history cursor.", 400); }
-  }
   const base: MusicFeed = {
     username: config.username,
     profileUrl: `https://www.last.fm/user/${encodeURIComponent(config.username)}`,

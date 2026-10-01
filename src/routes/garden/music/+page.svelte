@@ -79,12 +79,6 @@
     <a class="text-link" href="/garden/music/wall">[Musicwall]</a>
   </div>
   <!-- <p class="mt-5 text-gray-500 dark:text-gray-400">A little corner for what I'm listening to.</p> -->
-  {#if feed.source === "demo"}
-    <p class="mt-[5px] text-xs leading-normal text-gray-500 dark:text-gray-400">
-      Sample listening history
-    </p>
-  {/if}
-
   {#if feed.message}
     <p class="mt-5 leading-[1.75] text-gray-500 dark:text-gray-400" role="status">
       {feed.message}
