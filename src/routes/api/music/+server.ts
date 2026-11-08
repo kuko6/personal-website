@@ -11,11 +11,10 @@ export const GET: RequestHandler = async ({ fetch, url, platform }) => {
   const bindings = (platform as { env?: Record<string, unknown> } | undefined)?.env;
   const value = (name: string) => typeof bindings?.[name] === "string"
     ? bindings[name] as string : env[name] ?? "";
-  const apiKey = value("LASTFM_API_KEY");
   try {
     const feed = await musicFeed(fetch, {
-      username: value("LASTFM_USERNAME") || "kuko6",
-      apiKey,
+      username: value("LASTFM_USERNAME"),
+      apiKey: value("LASTFM_API_KEY"),
     }, view, url.searchParams.get("cursor"));
     return json(feed, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {

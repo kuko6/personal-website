@@ -15,7 +15,6 @@
 <div class="space-y-5">
   <h1><span class="rotated-underline">Garden</span> 🪴</h1>
   <p class="leading-7">A collection of notes, interests, and other things.</p>
-
   <ul class="list-disc mx-6 space-y-2 font-plex">
     <li>
       <a class="text-link" href="/garden/music">[Music]</a>
