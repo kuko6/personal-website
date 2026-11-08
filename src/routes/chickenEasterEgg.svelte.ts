@@ -24,7 +24,7 @@ export function createChickenEasterEgg() {
   let reducedMotion = false;
   let cursor: { x: number; y: number } | null = null;
   let animationFrame: number | null = null;
-  let previousFrameTime = 0;
+  let previousFrameTime: number | null = null;
   let jumpStartedAt = 0;
   let popTimeout: ReturnType<typeof setTimeout> | undefined;
 
@@ -99,13 +99,22 @@ export function createChickenEasterEgg() {
     if (reducedMotion || animationFrame !== null) return;
     if (state.phase !== "jumping" && state.phase !== "following") return;
 
-    previousFrameTime = performance.now();
+    // Start timing from the first frame's own timestamp. Chrome passes rAF the
+    // frame start time, which can be earlier than performance.now() taken in
+    // the pointermove handler, giving a negative elapsed that stalls the loop.
+    previousFrameTime = null;
     animationFrame = requestAnimationFrame(moveChicken);
   }
 
   function moveChicken(now: number) {
     animationFrame = null;
-    const elapsed = Math.min((now - previousFrameTime) / 1000, 0.05);
+    if (previousFrameTime === null) {
+      previousFrameTime = now;
+      animationFrame = requestAnimationFrame(moveChicken);
+      return;
+    }
+
+    const elapsed = Math.min(Math.max(0, now - previousFrameTime) / 1000, 0.05);
     previousFrameTime = now;
     state.moving = false;
 
